@@ -1,48 +1,78 @@
-body, html {
-  height: 100%;
-  margin: 0;
+:root {
+	--gokuSuit: #182e57;
+	--gokuHair: #ffab14;
+	--superSaiyanBlue: #496bab;
+	--skinColour: #fff4ea;
+	--skinColorDark: #ccbda6;
 }
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	color: white;
+	box-sizing: border-box;
+	font-family: monospace;
+	font-size: 25px;
+}
+
+/* CONTAINERS */
 
 .mainContainer {
-  text-align: center;
-  border: 1px solid;
-  height: 100%;
-  padding: 16px;
-  box-sizing: border-box;
-  display: inline-grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
-}
+	display: grid;
+	grid-template-columns: 240px 1fr 240px;
+	grid-template-rows: 150px 1fr 50px;
 
-.mainContainer div {
-  padding: 15px;
-  font-size: 32px;
-  font-family: Helvetica;
-  font-weight: bold;
-  color: white;
-  border-radius: 15px;
+	grid-template-areas:
+		"sidebar header header"
+		"sidebar mainContent sidebarLeft"
+		"sidebar footer footer";
+	height: 100vh;
 }
 
 .header {
-    grid-column-start: 2;
-    grid-column-end: 4;
-  background-color: #FFDE22;
-  order: 2;
-}
-
-.sidebar {
-    grid-row-start: 1;
-    grid-row-end: 4;
-  background-color: #FF7755;
-  order: 1;
+	display: flex;
+	grid-area: header;
+	background-color: var(--superSaiyanBlue);
+	color: var(--skinColorDark);
+	padding: 0 15px;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .mainContent {
-    grid-auto-rows:auto;
-  background-color: #bccbde;
-  order: 3;
+	grid-area: mainContent;
+	background-color: var(--gokuSuit);
+}
+
+.sidebar {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 50px 50px;
+
+	grid-template-areas:
+		"title"
+		"menuContainer";
+	grid-area: sidebar;
+	background-color: var(--gokuHair);
+}
+
+.title {
+	grid-area: title;
+}
+
+.sidebarRight {
+	grid-area: sidebarLeft;
+	background-color: var(--gokuSuit);
 }
 
 .footer {
-  background-color: #393f4d;
+	display: flex;
+	grid-area: footer;
+	background-color: var(--superSaiyanBlue);
+	color: var(--skinColorDark);
+	padding: 0 15px;
+	align-items: center;
+	justify-content: center;
 }
