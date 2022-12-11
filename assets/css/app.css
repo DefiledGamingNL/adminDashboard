@@ -1,20 +1,55 @@
 :root {
+	--accent-color: #ffab14;
+	--special-color: #2390cf;
+	--ceiling-color: #ffffff;
+	--high-color: #182e57;
+	--medium-color: #222222;
+	--low-color: #cccccc;
+	--floor-color: #000000;
 	--gokuSuit: #182e57;
-	--gokuHair: #ffab14;
 	--superSaiyanBlue: #496bab;
 	--skinColour: #fff4ea;
 	--skinColorDark: #ccbda6;
+	--aside-shadow: 0.05em 0.05em 0.2em rgba(0, 0, 0, 0.3);
+	--aside-glow: 0 0 0.1em #333333;
+	--action-text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
+	--action-text-glow: 0 0 0.2em #333333;
+	--base-transition: all 0.3s ease-out;
+	--fast-transition: all 0.15s ease-out;
+	color-scheme: dark;
 }
 
 body,
 html {
 	margin: 0;
 	padding: 0;
-	line-height: 1;
 	color: white;
-	box-sizing: border-box;
-	font-family: monospace;
-	font-size: 25px;
+}
+
+h4 {
+	font-weight: normal;
+	margin: 0 0 1em;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: var(--special-color);
+	text-decoration: underline;
+}
+
+a:link,
+a:visited {
+	color: var(--accent-color);
+	text-decoration: none;
+	text-shadow: 0.05em 0.05em 0.1em var(--floor-color);
+}
+a,
+a *,
+button,
+button * {
+	cursor: pointer;
+	transition: var(--fast-transition);
 }
 
 /* CONTAINERS */
@@ -33,45 +68,131 @@ html {
 
 .header {
 	display: flex;
+	position: sticky;
+	top: -5.8em;
 	grid-area: header;
-	background-color: var(--superSaiyanBlue);
-	color: var(--skinColorDark);
-	padding: 0 15px;
+	background-color: var(--high-color);
+	box-shadow: 0 0.2em 0.2em rgb(0 0 0 / 30%);
+	padding-bottom: 0.5em;
+	transition: var(--base-transition);
+	z-index: 2;
 	align-items: center;
 	justify-content: space-between;
 }
 
+.header > div {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
 .mainContent {
+	display: flex;
 	grid-area: mainContent;
-	background-color: var(--gokuSuit);
+	background-color: var(--mainContent);
+	flex: 1;
+	padding: 3em 4em;
+}
+
+.mainContent {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "card cardLeft";
+}
+
+.cardContainer {
+	flex: 3;
+	grid-area: card;
+}
+
+.cardContainer > div {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-column-gap: 1em;
+	grid-row-gap: 1em;
+}
+
+article {
+	display: flex;
+	align-items: stretch;
+	box-shadow: inset 0.5em 0 0 var(--special-color), 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+	flex-direction: column;
+	justify-content: stretch;
+	border-radius: 1em;
+	margin-bottom: 8%;
+	padding: 1em;
+	transition: var(--base-transition);
+}
+
+article > img {
+	border-radius: 0.5em;
+	box-shadow: 0.2em 0.2em 0.2em rgb(0 0 0 / 30%);
+	margin: 0 auto;
+	max-width: 450px;
+}
+.cardLeftContainer {
+	flex: 1;
+	padding-left: 1em;
+	grid-area: cardLeft;
+}
+
+.cardLeftContainer > div {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-column-gap: 1em;
+	grid-row-gap: 1em;
 }
 
 .sidebar {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 50px 50px;
-
-	grid-template-areas:
-		"title"
-		"menuContainer";
+	display: flex;
 	grid-area: sidebar;
-	background-color: var(--gokuHair);
+	background-color: var(--accent-color);
+	box-shadow: 0.2em 0 0.2em rgb(0 0 0 / 30%);
+	color: var(--high-color);
+	text-shadow: var(--aside-shadow);
+	transition: var(--base-transition);
+	flex-direction: column;
+}
+
+i {
+	margin-right: 10px;
+}
+
+.sidebarList {
+	padding: 0 20px;
+	margin-top: 25px;
+	list-style-type: none;
+	text-align: left;
+	color: var(--text);
+	line-height: 1.5;
+}
+
+.sidebarSettings {
+	padding: 0 20px;
+	margin-top: 25px;
+	list-style-type: none;
+	text-align: left;
+	color: var(--text);
+	line-height: 1.5;
 }
 
 .title {
-	grid-area: title;
+	color: var(--titleColor);
 }
 
 .sidebarRight {
 	grid-area: sidebarLeft;
-	background-color: var(--gokuSuit);
+	background-color: var(--mainContent);
 }
 
 .footer {
 	display: flex;
 	grid-area: footer;
-	background-color: var(--superSaiyanBlue);
-	color: var(--skinColorDark);
+	background-color: var(--footer);
+	color: var(--text);
 	padding: 0 15px;
 	align-items: center;
 	justify-content: center;

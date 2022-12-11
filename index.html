@@ -5,58 +5,85 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Admin Dashboard</title>
-		<link rel="stylesheet" href="assets/css/app.css" />
 		<script src="https://kit.fontawesome.com/d15cb35baa.js" crossorigin="anonymous"></script>
-		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css" />
+		<link rel="stylesheet" href="assets/css/app.css" />
 	</head>
 	<body>
 		<div class="mainContainer">
 			<header class="header">
-				<div class="headerSearch">Search...</div>
-				<div class="headerLogin">Logout</div>
+				<div>
+					<div class="search">Search</div>
+					<div class="login">Login</div>
+				</div>
+				<div>
+					<div class="title">Odin Project</div>
+					<div class="buttons">
+						<button class="btn btn-lg btn-primary">Button1</button>
+						<button class="btn btn-lg btn-primary">button2</button>
+						<button class="btn btn-lg btn-primary">button3</button>
+					</div>
+				</div>
 			</header>
 			<aside class="sidebar">
 				<div class="title"><h1>Admin Dash</h1></div>
-				<div class="menuContainer">
-					<div class="menu">
-						<ul>
-							<li class="menu-item">
-								<a href="#"> <i class="fas fa-house-chimney"></i>Home</a>
-							</li>
-							<li class="menu-item">
-								<a href="#"><i class="fas fa-id-card"></i>Profile</a>
-							</li>
-							<li class="menu-item">
-								<a href="#"><i class="fas fa-message"></i>Messages</a>
-							</li>
-							<li class="menu-item">
-								<a href="#"><i class="fas fa-clock-rotate-left"></i>History</a>
-							</li>
-							<li class="menu-item">
-								<a href="#"><i class="fas fa-copy"></i>Tasks</a>
-							</li>
-							<li class="menu-item last-item">
-								<a href="#"><i class="fas fa-people-group"></i>Communities</a>
-							</li>
-						</ul>
-					</div>
-					<div class="settings">
-						<ul>
-							<li class="menu-item first-item">
-								<a href="#"><i class="fas fa-cog"></i> Settings</a>
-							</li>
-							<li class="menu-item">
-								<a href="#"><i class="fas fa-question"></i> Support</a>
-							</li>
-							<li class="menu-item">
-								<a href="#"><i class="fas fa-shield"></i> Privacy</a>
-							</li>
-						</ul>
-					</div>
-				</div>
+				<ul class="sidebarList">
+					<li class="sidebarListItem"><i class="fas fa-house"></i>Home</li>
+					<li class="sidebarListItem"><i class="fas fa-id-badge"></i>Profile</li>
+					<li class="sidebarListItem"><i class="fas fa-message"></i>Messages</li>
+					<li class="sidebarListItem"><i class="fas fa-clock-rotate-left"></i>History</li>
+					<li class="sidebarListItem"><i class="fas fa-copy"></i>Tasks</li>
+					<li class="sidebarListItem"><i class="fas fa-people-group"></i>Communities</li>
+				</ul>
+				<ul class="sidebarSettings">
+					<li class="sidebarListItem"><i class="fas fas fa-cog"></i>Settings</li>
+					<li class="sidebarListItem"><i class="fas fa-check-square"></i>Support</li>
+					<li class="sidebarListItem"><i class="fas fa-shield"></i>Privacy</li>
+				</ul>
 			</aside>
 			<aside class="sidebarRight"></aside>
-			<main class="mainContent"></main>
+			<main class="mainContent">
+				<div class="cardContainer">
+					<article>
+						<h4><i class="fas fa-id-card"></i><a href="https://defiledgamingnl.github.io/portfolio">Portfolio</a></h4>
+						<img src="assets/images/portfolio.png" alt="" />
+						<p></p>
+						<div></div>
+					</article>
+					<article>
+						<h4>Portfolio</h4>
+						<img src="assets/images/portfolio.png" alt="" />
+						<p></p>
+						<div></div>
+					</article>
+					<article>
+						<h4>Portfolio</h4>
+						<img src="assets/images/portfolio.png" alt="" />
+						<p></p>
+						<div></div>
+					</article>
+				</div>
+				<div class="cardLeftContainer">
+					<article>
+						<h4>Portfolio</h4>
+						<img src="assets/images/portfolio.png" alt="" />
+						<p></p>
+						<div></div>
+					</article>
+					<article>
+						<h4>Portfolio</h4>
+						<img src="assets/images/portfolio.png" alt="" />
+						<p></p>
+						<div></div>
+					</article>
+					<article>
+						<h4>Portfolio</h4>
+						<img src="assets/images/portfolio.png" alt="" />
+						<p></p>
+						<div></div>
+					</article>
+				</div>
+			</main>
 			<footer class="footer">
 				<div class="footersubText">&copy; 2022 Made by Danny Heijnen with &hearts;</div>
 			</footer>
